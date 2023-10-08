@@ -1,0 +1,97 @@
+- VerificationName:  Post-Merge Execution Blocks Produced
+  ClientLayer:       Execution
+  PostMerge:         true
+  MetricName:        ExecutionBlockCount
+  AggregateFunction: Count
+  PassCriteria:      MinimumValue
+  PassValue:         1
+
+- VerificationName:  Post-Merge Execution Blocks Average GasUsed
+  ClientLayer:       Execution
+  PostMerge:         true
+  MetricName:        ExecutionGasUsed
+  AggregateFunction: Average
+  PassCriteria:      MinimumValue
+  PassValue:         1
+
+- VerificationName:  Post-Merge Execution Blocks Average BaseFee
+  ClientLayer:       Execution
+  PostMerge:         true
+  MetricName:        ExecutionBaseFee
+  AggregateFunction: Average
+  PassCriteria:      MinimumValue
+  PassValue:         1 # To be increased to 256
+
+- VerificationName:  Post-Merge Execution Blocks Total Difficulty
+  ClientLayer:       Execution
+  PostMerge:         true
+  MetricName:        ExecutionDifficulty
+  AggregateFunction: Sum
+  PassCriteria:      MaximumValue
+  PassValue:         0
+
+- VerificationName:       Post-Merge Execution Blocks Invalid Uncle Hash
+  ClientLayer:            Execution
+  PostMerge:              true
+  MetricName:             ExecutionUnclesHash
+  AggregateFunction:      CountUnequal
+  AggregateFunctionValue: 0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347
+  PassCriteria:           MaximumValue
+  PassValue:              0
+
+- VerificationName:       Post-Merge Execution Blocks Invalid Nonce
+  ClientLayer:            Execution
+  PostMerge:              true
+  MetricName:             ExecutionNonce
+  AggregateFunction:      CountUnequal
+  AggregateFunctionValue: 0
+  PassCriteria:           MaximumValue
+  PassValue:              0
+
+- VerificationName:  Post-Merge Beacon Blocks Produced
+  ClientLayer:       Beacon
+  PostMerge:         true
+  MetricName:        BeaconBlockCount
+  AggregateFunction: Count
+  PassCriteria:      MinimumValue
+  PassValue:         1
+
+- VerificationName:  Post-Merge Justified Epochs
+  ClientLayer:       Beacon
+  PostMerge:         true
+  MetricName:        FinalizedEpoch
+  AggregateFunction: Count
+  PassCriteria:      MinimumValue
+  PassValue:         1
+
+- VerificationName:  Post-Merge Finalized Epochs
+  ClientLayer:       Beacon
+  PostMerge:         true
+  MetricName:        FinalizedEpoch
+  AggregateFunction: Count
+  PassCriteria:      MinimumValue
+  PassValue:         2
+
+- VerificationName:  Post-Merge Epoch Attestation Performance
+  ClientLayer:       Beacon
+  PostMerge:         true
+  MetricName:        EpochAttestationPerformance
+  AggregateFunction: Average
+  PassCriteria:      MinimumValue
+  PassValue:         95
+
+- VerificationName:  Post-Merge Epoch Target Attestation Performance
+  ClientLayer:       Beacon
+  PostMerge:         true
+  MetricName:        EpochTargetAttestationPerformance
+  AggregateFunction: Average
+  PassCriteria:      MinimumValue
+  PassValue:         95
+
+- VerificationName:  Post-Merge Sync Participation Percentage
+  ClientLayer:       Beacon
+  PostMerge:         true
+  MetricName:        SyncParticipationPercentage
+  AggregateFunction: Average
+  PassCriteria:      MinimumValue
+  PassValue:         95
